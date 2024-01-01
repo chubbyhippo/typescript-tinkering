@@ -28,3 +28,9 @@ export default {
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib
+## 1
+https://vitejs.dev/guide/#scaffolding-your-first-vite-project
+```
+npm create vite@latest . -- --template react-ts
+```
