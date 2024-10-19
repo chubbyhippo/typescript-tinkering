@@ -16,3 +16,9 @@ https://prettier.io/docs/en/integrating-with-linters
 ```
 prettier --check .
 ```
+# 3. vitest
+```
+npm install -D vitest @vitest/browser playwright vitest-browser-react 
+```
+https://vitest.dev/guide/browser/  
+https://github.com/vitest-tests/browser-examples/tree/main/examples/react
