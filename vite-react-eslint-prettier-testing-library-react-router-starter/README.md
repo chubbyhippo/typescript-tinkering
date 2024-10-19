@@ -1,0 +1,4 @@
+# 1. vite and eslint
+```
+npm create vite@latest my-react-app -- --template react-ts
+```
