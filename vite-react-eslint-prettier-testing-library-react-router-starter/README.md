@@ -12,3 +12,7 @@ npm install -D prettier eslint-config-prettier
 ## configure prettier
 https://prettier.io/docs/en/configuration  
 https://prettier.io/docs/en/integrating-with-linters
+## to make sure the project is formatted
+```
+prettier --check .
+```
