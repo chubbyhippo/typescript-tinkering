@@ -16,3 +16,4 @@ cd "$name" || exit
 npm install -D prettier eslint-config-prettier
 cp ../config/.prettierrc .prettierrc
 npm install -D vitest @vitest/browser playwright vitest-browser-react
+cp -f ../config/vite.config.ts vite.config.ts
