@@ -41,16 +41,22 @@ const App = () => (
 );
 
 const Search = () => {
+  const [searchTerm, setSearchTerm] = React.useState('');
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(event);
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
 
   return (
-    <div>
-      <label htmlFor="search">Search: </label>
-      <input type="text" id="search" onChange={handleChange} />
-    </div>
+    <>
+      <div>
+        <label htmlFor="search">Search: </label>
+        <input type="text" id="search" onChange={handleChange} />
+      </div>
+      <p>
+        Searching for <strong>{searchTerm}</strong>.
+      </p>
+    </>
   );
 };
 
