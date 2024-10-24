@@ -22,13 +22,15 @@ const App = () => (
     <h1>My Hacker Stories</h1>
 
     <label htmlFor="search">Search: </label>
-    <input type="text" id="search" />
+    <Search />
 
     <hr />
 
     <List />
   </div>
 );
+
+const Search = () => <input type="text" id="search" />;
 
 const List = () => (
   <ul>
