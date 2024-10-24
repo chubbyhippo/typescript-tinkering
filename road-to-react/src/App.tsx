@@ -66,7 +66,7 @@ const List = (props: Stories) => (
   </ul>
 );
 
-function Item(props: { item: Story }) {
+function Item(props: Readonly<{ item: Story }>) {
   return (
     <li>
       <span>
