@@ -4,7 +4,7 @@ interface Story {
   title: string;
   url: string;
   author: string;
-  num_comments: number;
+  numOfComments: number;
   points: number;
   objectID: number;
 }
@@ -14,7 +14,7 @@ const stories = [
     title: 'React',
     url: 'https://reactjs.org/',
     author: 'Jordan Walke',
-    num_comments: 3,
+    numOfComments: 3,
     points: 4,
     objectID: 0,
   },
@@ -22,7 +22,7 @@ const stories = [
     title: 'Redux',
     url: 'https://redux.js.org/',
     author: 'Dan Abramov, Andrew Clark',
-    num_comments: 2,
+    numOfComments: 2,
     points: 5,
     objectID: 1,
   },
@@ -73,7 +73,7 @@ function Item(props: { item: Story }) {
         <a href={props.item.url}>{props.item.title}</a>
       </span>
       <span>{props.item.author}</span>
-      <span>{props.item.num_comments}</span>
+      <span>{props.item.numOfComments}</span>
       <span>{props.item.points}</span>
     </li>
   );
