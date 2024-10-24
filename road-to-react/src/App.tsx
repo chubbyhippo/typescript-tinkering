@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 const list = [
   {
     title: 'React',
@@ -21,7 +23,6 @@ const App = () => (
   <div>
     <h1>My Hacker Stories</h1>
 
-    <label htmlFor="search">Search: </label>
     <Search />
 
     <hr />
@@ -30,8 +31,19 @@ const App = () => (
   </div>
 );
 
-const Search = () => <input type="text" id="search" />;
+const Search = () => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event);
+    console.log(event.target.value);
+  };
 
+  return (
+    <div>
+      <label htmlFor="search">Search: </label>
+      <input type="text" id="search" onChange={handleChange} />
+    </div>
+  );
+};
 const List = () => (
   <ul>
     {list.map((item) => (
