@@ -1,2 +1,2 @@
 # the road to learn react
-p.66
+p.69
