@@ -60,16 +60,12 @@ interface SearchProps {
 }
 
 const Search = (props: SearchProps) => {
+  const { search, onSearch } = props;
   return (
     <>
       <div>
         <label htmlFor="search">Search: </label>
-        <input
-          type="text"
-          id="search"
-          value={props.search}
-          onChange={props.onSearch}
-        />
+        <input type="text" id="search" value={search} onChange={onSearch} />
       </div>
     </>
   );
