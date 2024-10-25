@@ -44,7 +44,7 @@ const App = () => {
       <div>
         <h1>My Hacker Stories</h1>
 
-        <Search onSearch={handleSearch} />
+        <Search search={searchTerm} onSearch={handleSearch} />
 
         <hr />
 
@@ -55,6 +55,7 @@ const App = () => {
 };
 
 interface SearchProps {
+  search: string;
   onSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
@@ -63,7 +64,12 @@ const Search = (props: SearchProps) => {
     <>
       <div>
         <label htmlFor="search">Search: </label>
-        <input type="text" id="search" onChange={props.onSearch} />
+        <input
+          type="text"
+          id="search"
+          value={props.search}
+          onChange={props.onSearch}
+        />
       </div>
     </>
   );
