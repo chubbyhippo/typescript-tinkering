@@ -59,8 +59,7 @@ interface SearchProps {
   onSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const Search = (props: SearchProps) => {
-  const { search, onSearch } = props;
+const Search = ({ search, onSearch }: SearchProps) => {
   return (
     <>
       <div>
@@ -75,25 +74,23 @@ interface Stories {
   list: Story[];
 }
 
-const List = (props: Stories) => (
+const List = ({ list }: Stories) => (
   <ul>
-    {props.list.map((item) => (
+    {list.map((item) => (
       <Item key={item.objectID} item={item} />
     ))}
   </ul>
 );
 
-function Item(props: Readonly<{ item: Story }>) {
-  return (
-    <li>
-      <span>
-        <a href={props.item.url}>{props.item.title}</a>
-      </span>
-      <span>{props.item.author}</span>
-      <span>{props.item.numOfComments}</span>
-      <span>{props.item.points}</span>
-    </li>
-  );
-}
+const Item = ({ item }: { item: Story }) => (
+  <li>
+    <span>
+      <a href={item.url}>{item.title}</a>
+    </span>
+    <span>{item.author}</span>
+    <span>{item.numOfComments}</span>
+    <span>{item.points}</span>
+  </li>
+);
 
 export default App;
