@@ -9,42 +9,55 @@ interface Story {
   objectID: number;
 }
 
-const stories = [
-  {
-    title: 'React',
-    url: 'https://reactjs.org/',
-    author: 'Jordan Walke',
-    numOfComments: 3,
-    points: 4,
-    objectID: 0,
-  },
-  {
-    title: 'Redux',
-    url: 'https://redux.js.org/',
-    author: 'Dan Abramov, Andrew Clark',
-    numOfComments: 2,
-    points: 5,
-    objectID: 1,
-  },
-];
+const App = () => {
+  const stories = [
+    {
+      title: 'React',
+      url: 'https://reactjs.org/',
+      author: 'Jordan Walke',
+      numOfComments: 3,
+      points: 4,
+      objectID: 0,
+    },
+    {
+      title: 'Redux',
+      url: 'https://redux.js.org/',
+      author: 'Dan Abramov, Andrew Clark',
+      numOfComments: 2,
+      points: 5,
+      objectID: 1,
+    },
+  ];
+  const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log('handleSearch');
+    console.log(event.target.value);
+  };
 
-const App = () => (
-  <div>
-    <h1>My Hacker Stories</h1>
+  return (
+    <>
+      <div>
+        <h1>My Hacker Stories</h1>
 
-    <Search />
+        <Search onSearch={handleSearch} />
 
-    <hr />
+        <hr />
 
-    <List list={stories} />
-  </div>
-);
+        <List list={stories} />
+      </div>
+    </>
+  );
+};
 
-const Search = () => {
+interface SearchProps {
+  onSearch: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+const Search = (props: SearchProps) => {
   const [searchTerm, setSearchTerm] = React.useState('');
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
+    props.onSearch(event);
   };
 
   return (
