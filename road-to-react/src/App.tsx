@@ -28,10 +28,16 @@ const App = () => {
       objectID: 1,
     },
   ];
+
+  const [searchTerm, setSearchTerm] = React.useState('');
+
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log('handleSearch');
-    console.log(event.target.value);
+    setSearchTerm(event.target.value);
   };
+
+  const searchStories = stories.filter((story) =>
+    story.title.toLowerCase().includes(searchTerm)
+  );
 
   return (
     <>
@@ -42,7 +48,7 @@ const App = () => {
 
         <hr />
 
-        <List list={stories} />
+        <List list={searchStories} />
       </div>
     </>
   );
@@ -53,22 +59,12 @@ interface SearchProps {
 }
 
 const Search = (props: SearchProps) => {
-  const [searchTerm, setSearchTerm] = React.useState('');
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-    props.onSearch(event);
-  };
-
   return (
     <>
       <div>
         <label htmlFor="search">Search: </label>
-        <input type="text" id="search" onChange={handleChange} />
+        <input type="text" id="search" onChange={props.onSearch} />
       </div>
-      <p>
-        Searching for <strong>{searchTerm}</strong>.
-      </p>
     </>
   );
 };
