@@ -70,11 +70,11 @@ const Search = ({ search, onSearch }: SearchProps) => {
   );
 };
 
-interface Stories {
+interface StoryProps {
   list: Story[];
 }
 
-const List = ({ list }: Stories) => (
+const List = ({ list }: StoryProps) => (
   <ul>
     {list.map((item) => (
       <Item key={item.objectID} item={item} />
@@ -82,7 +82,11 @@ const List = ({ list }: Stories) => (
   </ul>
 );
 
-const Item = ({ item }: { item: Story }) => (
+interface ItemProps {
+  item: Story;
+}
+
+const Item = ({ item }: ItemProps) => (
   <li>
     <span>
       <a href={item.url}>{item.title}</a>
