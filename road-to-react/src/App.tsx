@@ -30,7 +30,7 @@ const App = () => {
   ];
 
   const [searchTerm, setSearchTerm] = React.useState(
-    localStorage.getItem('searchTerm') ?? 'React'
+    localStorage.getItem('search') ?? 'React'
   );
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
