@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 interface Story {
   title: string;
@@ -29,13 +30,16 @@ const App = () => {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = React.useState(
+  const [searchTerm, setSearchTerm] = useState(
     localStorage.getItem('search') ?? 'React'
   );
 
+  useEffect(() => {
+    localStorage.setItem('search', searchTerm);
+  }, [searchTerm]);
+
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
-    localStorage.setItem('search', event.target.value);
   };
 
   const searchStories = stories.filter((story) =>
