@@ -47,17 +47,15 @@ const App = () => {
   );
 
   return (
-    <>
-      <div>
-        <h1>My Hacker Stories</h1>
+    <div>
+      <h1>My Hacker Stories</h1>
 
-        <Search search={searchTerm} onSearch={handleSearch} />
+      <Search search={searchTerm} onSearch={handleSearch} />
 
-        <hr />
+      <hr />
 
-        <List list={searchStories} />
-      </div>
-    </>
+      <List list={searchStories} />
+    </div>
   );
 };
 
@@ -68,12 +66,10 @@ interface SearchProps {
 
 const Search = ({ search, onSearch }: SearchProps) => {
   return (
-    <>
-      <div>
-        <label htmlFor="search">Search: </label>
-        <input type="text" id="search" value={search} onChange={onSearch} />
-      </div>
-    </>
+    <div>
+      <label htmlFor="search">Search: </label>
+      <input type="text" id="search" value={search} onChange={onSearch} />
+    </div>
   );
 };
 
