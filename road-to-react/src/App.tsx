@@ -10,6 +10,15 @@ interface Story {
   objectID: number;
 }
 
+const useStorageState = (key: string, initialState: string) => {
+  const [value, setValue] = useState(localStorage.getItem(key) ?? initialState);
+
+  useEffect(() => {
+    localStorage.setItem(key, value);
+  }, [value, key]);
+
+  return [value, setValue] as const;
+};
 const App = () => {
   const stories = [
     {
@@ -30,13 +39,7 @@ const App = () => {
     },
   ];
 
-  const [searchTerm, setSearchTerm] = useState(
-    localStorage.getItem('search') ?? 'React'
-  );
-
-  useEffect(() => {
-    localStorage.setItem('search', searchTerm);
-  }, [searchTerm]);
+  const [searchTerm, setSearchTerm] = useStorageState('search', 'React');
 
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(event.target.value);
