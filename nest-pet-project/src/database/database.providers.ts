@@ -11,7 +11,7 @@ export const databaseProviders = [
         username: 'admin',
         password: 'admin',
         database: 'mydatabase',
-        entities: [__dirname + '/../**/*.entity{.ts,.js}'],
+        entities: [__dirname + '../**/*.entity{.ts,.js}'],
         synchronize: true, // Set to false in production
       });
 
