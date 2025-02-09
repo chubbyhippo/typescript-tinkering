@@ -11,7 +11,7 @@ export class GetAllCategoriesHandler implements IQueryHandler<GetAllCategoriesQu
         private readonly categoryRepository: Repository<CategoryEntity>,
     ){}
 
-    execute(query: GetAllCategoriesQuery): Promise<CategoryEntity[]> {
+    execute(_query: GetAllCategoriesQuery): Promise<CategoryEntity[]> {
         return this.categoryRepository.find({relations: ['pets']});
     }
 
