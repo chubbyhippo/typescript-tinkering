@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import { CategoriesModule } from './categories/categories.module';
-import { PetsModule } from './pets/pets.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { PetEntity } from './pets/pet.entity';
+import { CategoriesModule } from './categories/categories.module';
 import { CategoryEntity } from './categories/category.entity';
+import { PetEntity } from './pets/pet.entity';
+import { PetsModule } from './pets/pets.module';
 
 @Module({
   imports: [
@@ -22,7 +20,5 @@ import { CategoryEntity } from './categories/category.entity';
     PetsModule,
     CategoriesModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
 })
 export class AppModule {}
