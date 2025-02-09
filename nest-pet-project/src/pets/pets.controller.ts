@@ -4,6 +4,7 @@ import { CreatePetCommand } from './commands/create-pet.command';
 import { CreatePetDto } from './dto/create-pet-dto';
 import { GetAllPetsQuery } from './queries/get-all-pets.query';
 import { GetAllPetsPaginationQuery } from './queries/get-all-pets-pagination.query';
+import { GetAllPetsRawSqlQuery } from './queries/get-all-pets-raw-sql.query';
 
 @Controller('pets')
 export class PetsController {
@@ -29,5 +30,10 @@ export class PetsController {
     @Query('limit') limit: number = 10,
   ) {
     return this.qeuryBus.execute(new GetAllPetsPaginationQuery(page, limit));
+  }
+
+  @Get('rawSql')
+  async getAllPetsRawSql() {
+    return this.qeuryBus.execute(new GetAllPetsRawSqlQuery());
   }
 }
