@@ -10,7 +10,7 @@ export class GetAllPetsHandler implements IQueryHandler<GetAllPetsQuery> {
     @InjectRepository(PetEntity)
     private readonly petEntityRepository: Repository<PetEntity>,
   ) {}
-  execute(_query: GetAllPetsQuery): Promise<PetEntity[]> {
+  execute(): Promise<PetEntity[]> {
     return this.petEntityRepository.find({ relations: ['category'] });
   }
 }
