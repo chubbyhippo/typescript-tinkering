@@ -1,6 +1,5 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { CategoryEntity } from 'src/categories/category.entity';
-
+import { CategoryEntity } from '../categories/category.entity';
 @Entity()
 export class PetEntity {
   @PrimaryGeneratedColumn()
