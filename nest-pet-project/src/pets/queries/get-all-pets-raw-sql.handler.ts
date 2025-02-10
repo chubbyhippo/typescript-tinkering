@@ -8,7 +8,7 @@ export class GetAllPetsRawSqlHandler
   implements IQueryHandler<GetAllPetsRawSqlQuery>
 {
   constructor(private readonly dataSource: DataSource) {}
-  async execute(_query: GetAllPetsRawSqlQuery): Promise<PetEntity[]> {
+  async execute(): Promise<PetEntity[]> {
     const sqlQuery = `SELECT * FROM pet_entity`;
 
     return await this.dataSource.query(sqlQuery);
