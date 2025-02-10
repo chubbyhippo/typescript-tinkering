@@ -3,7 +3,7 @@ import { CreatePetCommand } from './create-pet.command';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PetEntity } from '../pet.entity';
 import { Repository } from 'typeorm';
-import { CategoryEntity } from 'src/categories/category.entity';
+import { CategoryEntity } from '../../categories/category.entity';
 
 @CommandHandler(CreatePetCommand)
 export class CreatePetHandler implements ICommandHandler<CreatePetCommand> {
